@@ -7,7 +7,7 @@
   - [Linux基本命令](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4.md)
   - [Linux Crontab](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/crontab.md)
   - [Shell脚本](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/crontab.md)
-  - [Linux-Inode介绍](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/inode.md)
+    - [Linux-Inode介绍](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/inode.md)
   - [VIM编辑器]()
   - [Lnmp/Lamp]()
 
