@@ -42,18 +42,158 @@
 
 #### 排序算法
 
-- 冒泡排序
-- 插入排序
-- 希尔排序
-- 选择排序
-- 快速排序
-- 桶排序
+- [冒泡排序](https://github.com/xianyunyh/arithmetic-php/blob/master/package/Sort/BubbleSort.php)
+
+```php
+function BubbleSort(array $container)
+{
+    $count = count($container);
+    for ($j = 1; $j < $count; $j++) {
+        for ($i = 0; $i < $count - $j; $i++) {
+            if ($container[$i] > $container[$i + 1]) {
+                $temp = $container[$i];
+                $container[$i] = $container[$i + 1];
+                $container[$i + 1] = $temp;
+            }
+        }
+    }
+    return $container;
+}
+```
+- [插入排序](https://github.com/xianyunyh/arithmetic-php/blob/master/package/Sort/InsertSort.php)
+
+```php
+function InsertSort(array $container)
+{
+    $count = count($container);
+    for ($i = 1; $i < $count; $i++){
+        $temp = $container[$i];
+        $j    = $i - 1;
+        // Init
+        while($j >= 0 && $container[$j] > $temp){
+            $container[$j+1] = $container[$j];
+            $j--;
+        }
+        if($i != $j+1) 
+            $container[$j+1] = $temp;
+    }
+    return $container;
+}
+```
+
+- [希尔排序](https://github.com/xianyunyh/arithmetic-php/blob/master/package/Sort/ShellSort.php)
+
+```php
+function ShellSort(array $container)
+{
+    $count = count($container);
+    for ($increment = intval($count / 2); $increment > 0; $increment = intval($increment / 2)) {
+        for ($i = $increment; $i < $count; $i++) {
+            $temp = $container[$i];
+            for ($j = $i; $j >= $increment; $j -= $increment) {
+                if ($temp < $container[$j - $increment]) {
+                    $container[$j] = $container[$j - $increment];
+                } else {
+                    break;
+                }
+            }
+            $container[$j] = $temp;
+        }
+    }
+    return $container;
+}
+```
+
+
+
+- [选择排序](https://github.com/xianyunyh/arithmetic-php/blob/master/package/Sort/SelectSort.php)
+
+```php
+function SelectSort(array $container)
+{
+    $count = count($container);
+    for ($i = 0; $i < $count; $i++){
+        $k = $i;
+        for ($j = $i + 1; $j < $count; $j++){
+            if($container[$j] < $container[$k]){
+                $k = $j;
+            }
+        }
+        if($k != $i){
+            $temp          = $container[$i];
+            $container[$i] = $container[$k];
+            $container[$k] = $temp;
+        }
+    }
+    return $container;
+}
+```
+
+- [快速排序](https://github.com/xianyunyh/arithmetic-php/blob/master/package/Sort/QuickSort.php)
+
+```php
+function QuickSort(array $container)
+{
+    $count = count($container);
+    if ($count <= 1) { // 基线条件为空或者只包含一个元素，只需要原样返回数组
+        return $container;
+    }
+    $pivot = $container[0]; // 基准值 pivot
+    $left  = $right = [];
+    for ($i = 1; $i < $count; $i++) {
+        if ($container[$i] < $pivot) {
+            $left[] = $container[$i];
+        } else {
+            $right[] = $container[$i];
+        }
+    }
+    $left  = QuickSort($left);
+    $right = QuickSort($right);
+    return array_merge($left, [$container[0]], $right);
+}
+```
+
 - 归并排序
+- 堆排序
 
 #### 查找算法
 
 - 顺序查找
+
+```php
+function find($array ,$target) {
+    foreach ($array as $key=>$value) {
+        if($value === $target) {
+            return key;
+        }
+    }
+    return false;
+}
+```
+
 - 有序查找（二分查找）
+
+```php
+function BinaryQueryRecursive(array $container, $search, $low = 0, $top = 'default')
+{
+    $top == 'default' && $top = count($container);
+    if ($low <= $top) {
+        $mid = intval(floor($low + $top) / 2);
+        if (!isset($container[$mid])) {
+            return false;
+        }
+        if ($container[$mid] == $search) {
+            return $mid;
+        }
+        if ($container[$mid] < $search) {
+            return BinaryQueryRecursive($container, $search, $mid + 1, $top);
+        } else {
+            return BinaryQueryRecursive($container, $search, $low, $mid - 1);
+        }
+    }
+}
+```
+
 - 动态查找（BST）
 - 哈希表 O（1）
 

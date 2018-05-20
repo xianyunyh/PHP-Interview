@@ -169,7 +169,7 @@ git config --global user.email johndoe@example.com
 
 别名就是把一些复杂的命令简化 类似svn co等之类的
 
-```
+```shell
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.br branch
@@ -182,7 +182,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 每个仓库的Git配置文件都放在.git/config文件中：
 
-```shell
+```ini
 [core]
     repositoryformatversion = 0
     filemode = true
@@ -202,7 +202,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中
 
-```
+```ini
 [alias]
     co = checkout
     ci = commit
