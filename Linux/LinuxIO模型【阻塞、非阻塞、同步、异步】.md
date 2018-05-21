@@ -69,6 +69,8 @@ IO multiplexing就是我们说的select，poll，epoll，有些地方也称这�
 
 ![img](https://upload-images.jianshu.io/upload_images/1446087-3b0399b077daf0a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/609) 
 
+在一个调用中阻塞`select`，等待数据报套接字可读。当`select` 返回套接字可读时，我们然后调用`recvfrom` 将数据报复制到我们的应用程序缓冲区中 .使用`select`需要两次系统调用而不是一次 
+
 在IO multiplexing Model中，实际中，**对于每一个socket，一般都设置成为non-blocking，因为只有设置成non-blocking 才能使单个线程/进程不被阻塞（或者说锁住），可以继续处理其他socket。如上图所示，整个用户的process其实是一直被block的。只不过process是被select这个函数block，而不是被socket IO给block。**
 
 ### 异步 I/O

@@ -10,6 +10,7 @@
   - [Linux-Inode介绍](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/inode.md)
   - [VIM编辑器]()
   - [Lnmp/Lamp](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/lanmp.md)
+  - [LinuxIO模型【阻塞、非阻塞、同步、异步】.md](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/LinuxIO%E6%A8%A1%E5%9E%8B%E3%80%90%E9%98%BB%E5%A1%9E%E3%80%81%E9%9D%9E%E9%98%BB%E5%A1%9E%E3%80%81%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E3%80%91.md)
 
 - [数据库]()
 
