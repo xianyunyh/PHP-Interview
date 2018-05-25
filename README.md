@@ -49,19 +49,19 @@
     - [B-Tree、B+Tree]()
   - [图]()
 
-- [算法]()
+- [算法](https://github.com/xianyunyh/PHP-Interview/tree/master/%E7%AE%97%E6%B3%95)
 
   - [排序算法]()
-    - [冒泡排序]()
-    - [选择排序]()
-    - [插入排序]()
-    - [快速排序]()
-    - [堆排序]()
-    - [归并排序]()
+    - [冒泡排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/BubbleSort.php)
+    - [选择排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/SelectSort.php)
+    - [插入排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/InsertSort.php)
+    - [快速排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/QuickSort.php)
+    - [堆排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/HeapSort.php)
+    - [归并排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/MergeSort.php)
   - [查找算法]()
-    - [二分查找]()
+    - [二分查找](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Query/BinaryQuery.php)
     - [hash]()
-    - [KPM]()
+    - [KPM](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Query/Kmp.php)
   - [其他]()
     - 布隆过滤器
     - 贪心算法
@@ -71,6 +71,7 @@
     - 最短路径
     - 推荐算法
     - 深度优先、广度优先
+  - [编程之法：面试和算法心得](https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/03.02.html)
 
 - [消息队列]()
 
@@ -81,13 +82,15 @@
 
 - [缓存系统]()
 
-  - [Redis]()
+  - [Redis](https://github.com/xianyunyh/PHP-Interview/blob/master/Cache/Redis.md)
   - [Memcache]()
 
-- [PHP]()
+- [PHP](https://github.com/xianyunyh/PHP-Interview/tree/master/PHP)
 
+  - [PHP7](https://github.com/xianyunyh/PHP-Interview/blob/master/PHP/php7.md)
   - [面向对象OOP]()
-  - [GC]()
+  - [Zval](https://github.com/xianyunyh/PHP-Interview/blob/master/PHP/PHP-Zval%E7%BB%93%E6%9E%84.md)
+  - [HashTable](https://github.com/xianyunyh/PHP-Interview/blob/master/PHP/PHP7-HashTable.md)
   - [Swoole]()
 
 - [设计模式]()
