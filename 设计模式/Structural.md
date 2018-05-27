@@ -103,14 +103,14 @@ class Car implements Component{
     }
 }
 
-class Decorator extends Car {
-    public function __construct()
+class Decorator {
+    public function __construct(Car $car)
     {
-        parent::__construct();
+       $this->car = $car;
     }
     public function run()
     {
-        parent::run();
+        $this->car->run();
         $this->fly();
     }
     protected function fly()
