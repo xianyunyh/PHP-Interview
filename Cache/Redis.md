@@ -2,7 +2,9 @@
 
 redis是一个开源的支持多种数据类型的key=>value的存储数据库。支持字符串、列表、集合、有序集合、哈希五种类型
 
+图片过大，请下载到本地打开
 
+![redis](redis.png)
 
 ### redis 和memcache区别
 
