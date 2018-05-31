@@ -73,9 +73,9 @@
     - 深度优先、广度优先
   - [编程之法：面试和算法心得](https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/03.02.html)
 
-- [消息队列]()
+- [消息队列](https://github.com/xianyunyh/PHP-Interview/tree/master/MQ)
 
-  - [RabbitMQ]()
+  - [RabbitMQ](https://github.com/xianyunyh/PHP-Interview/blob/master/MQ/rabbitmq.md)
   - [ActiveMq]()
   - [Nsq]()
   - [kafka]()
@@ -105,7 +105,7 @@
 
   
 
-推荐阅读资料
+##推荐阅读资料
 
 - [PHP函数库](http://overapi.com/php)
 
