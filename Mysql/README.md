@@ -4,7 +4,7 @@
 
 - [字段类型]()
 
-  ![mysqlä¸­çåºæ¬æ°æ®ç±»å](https://www.2cto.com/uploadfile/Collfiles/20171201/2017120109334458.png) 
+  ![](https://www.2cto.com/uploadfile/Collfiles/20171201/2017120109334458.png) 
 
   - char/varchar/text/longtext
   - enum/set
@@ -38,4 +38,14 @@
   - [乐观锁和悲观锁]()
   - [死锁](https://www.cnblogs.com/sivkun/p/7518540.html)
 
-  
+
+### 阅读资料
+
+- [MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html) 
+
+- [MySQL索引原理及慢查询优化](https://tech.meituan.com/mysql-index.html)
+
+- [InnoDB备忘录 - Next-Key Lock](http://zhongmingmao.me/2017/05/19/innodb-next-key-lock/)
+
+- [MySQL主从复制与读写分离](https://www.cnblogs.com/luckcs/articles/2543607.html)
+
