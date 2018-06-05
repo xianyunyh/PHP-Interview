@@ -2,6 +2,12 @@
 
 这个项目是自己准备面试整理的资料。可能包括PHP、MySQL等资料。方便自己以后查阅，会不定期更新，如果错误，请指出，谢谢。欢迎大家提交PR，谢谢大家的star
 
+有童鞋提议整理成gitbook的版本的。于是我又开了一个gitbook的分支。来完善这个。目前还没整理完成。
+
+可以通过[https://xianyunyh.gitbooks.io/php-interview/](https://xianyunyh.gitbooks.io/php-interview/)预览。欢迎有精力的朋友完善一下。谢谢。
+
+[GITbooK分支](https://github.com/xianyunyh/PHP-Interview/tree/gitbook)
+
 - [Linux](https://github.com/xianyunyh/PHP-Interview/tree/master/Linux)
 
   - [Linux基本命令](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4.md)
