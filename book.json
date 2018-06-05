@@ -2,17 +2,20 @@
     "title": "PHP知识整理",
     "description": "PHP知识整理",
     "language": "zh",
+    "extension": null,
+    "generator": "site",
     "plugins": [
       "github",
       "anchors",
-      "theme-comscore"
+      "theme-comscore",
+      "multipart"
     ],
-    "theme-default": {
-        "showLevel": true
-    },
     "pluginsConfig": {
       "github": {
         "url": "https://github.com/xianyunyh/PHP-Interview"
-      }
+      },
+      "theme-default": {
+        "showLevel": true
+    }
     }
   }
