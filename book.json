@@ -1,14 +1,14 @@
 {
     "title": "PHP知识整理",
     "description": "PHP知识整理",
-    "language": "zh",
+    "language": "zh-hans",
     "extension": null,
     "generator": "site",
     "plugins": [
       "github",
       "anchors",
       "theme-comscore",
-      "multipart"
+      "expandable-chapters"
     ],
     "pluginsConfig": {
       "github": {
