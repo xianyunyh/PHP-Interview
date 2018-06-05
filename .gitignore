@@ -1,0 +1,7 @@
+/node_modules
+/vendor
+/.idea
+/.vscode
+/.vagrant
+.env
+/_book
