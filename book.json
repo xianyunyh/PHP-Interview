@@ -4,11 +4,14 @@
     "language": "zh-hans",
     "extension": null,
     "generator": "site",
+    "gitbook": "3.x.x",
     "plugins": [
       "github",
       "anchors",
       "theme-comscore",
-      "expandable-chapters"
+      "expandable-chapters-small",
+      "search-plus",
+      "-search"
     ],
     "pluginsConfig": {
       "github": {
@@ -16,6 +19,19 @@
       },
       "theme-default": {
         "showLevel": true
-    }
-    }
+      },
+      "search-pro": {
+        "cutWordLib": "nodejieba",
+        "defineWord" : ["Gitbook Use"]
+      }
+    },
+    "links": {
+      "gitbook": false,
+      "sharing": {
+          "google": false,
+          "facebook": false,
+          "twitter": false,
+          "all": false
+      }
+  }
   }
