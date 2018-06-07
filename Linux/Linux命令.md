@@ -9,7 +9,7 @@
 - 创建：mkdir
 - 删除：rm
 - 删除非空目录：rm -rf file目录
-- 删除日志 rm *log (等价: $find ./ -name “*log” -exec rm {} ;)
+- 删除日志 rm *log (等价: $find ./ -name “*log” -exec rm {} \;)
 - 移动：mv
 - 复制：cp (复制目录：cp -r )
 - 创建文件 touch
