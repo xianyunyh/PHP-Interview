@@ -12,10 +12,10 @@
 
   - [Linux基本命令](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4.md)
   - [Crontab](Linux/crontab.md)
-  - [Shell](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/crontab.md)
+  - [Shell](Linux/shell.md)
   - [Linux-Inode介绍](Linux/inode.md)
   - [VIM编辑器]()
-  - [Lnmp/Lamp](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/lanmp.md)
+  - [Lnmp/Lamp](Linux/lanmp.md)
   - [LinuxIO模型.md](Linux/LinuxIO模型.md)
 
 - [数据库](Mysql/README.md)
