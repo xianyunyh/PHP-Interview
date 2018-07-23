@@ -2,14 +2,65 @@ import requests
 import json
 import redis
 from pyquery import PyQuery as pq
+import hashlib
+import re
+
+#请求对象
+session = requests.session()
+
+#请求头信息
+HEADERS = {
+    'Referer': 'https://passport.lagou.com/login/login.html',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:51.0) Gecko/20100101 Firefox/51.0',
+}
+headers = {}
+cookies = {}
+
+def get_password(passwd):
+    '''这里对密码进行了md5双重加密 veennike 这个值是在main.html_aio_f95e644.js文件找到的 '''
+    passwd = hashlib.md5(passwd.encode('utf-8')).hexdigest()
+    passwd = 'veenike' + passwd + 'veenike'
+    passwd = hashlib.md5(passwd.encode('utf-8')).hexdigest()
+    return passwd
+
+def get_token():
+    Forge_Token = ""
+    Forge_Code = ""
+    login_page = 'https://passport.lagou.com/login/login.html'
+    data = session.get(login_page, headers=HEADERS)
+    match_obj = re.match(r'.*X_Anti_Forge_Token = \'(.*?)\';.*X_Anti_Forge_Code = \'(\d+?)\'', data.text, re.DOTALL)
+    if match_obj:
+        Forge_Token = match_obj.group(1)
+        Forge_Code = match_obj.group(2)
+    return Forge_Token, Forge_Code
+
+def login(username, passwd):
+    X_Anti_Forge_Token, X_Anti_Forge_Code = get_token()
+    login_headers = HEADERS.copy()
+    login_headers.update({'X-Requested-With': 'XMLHttpRequest', 'X-Anit-Forge-Token': X_Anti_Forge_Token, 'X-Anit-Forge-Code': X_Anti_Forge_Code})
+    postData = {
+            'username': username,
+            'password': get_password(passwd),
+            'request_form_verifyCode': '',
+            'submit': '',
+        }
+    response = session.post('https://passport.lagou.com/login/login.json', data=postData, headers=login_headers)
+    json_data = response.json()
+    if(json_data['state'] != 1):
+        print("登录失败，退出")
+        exit(-1)
+
+def get_cookies():
+    session.get("https://passport.lagou.com/grantServiceTicket/grant.html")
+    return requests.utils.dict_from_cookiejar(session.cookies)
 
 """
 获取职位列表
 """
-def fetch(url,headers={}):
+def fetch(url,headers,cookies):
     #用户登录后的cookie
     try:
-        res = requests.get(url,headers=headers)
+        res = session.get(url,headers=headers,cookies=cookies)
     except Exception as e:
         print(e)
         return False
@@ -43,15 +94,15 @@ def insert(data):
             resA = r.sadd("company",id)
 
             if resA == 1:
-                res = fetchDetail(positionId,headers=headers)
+                res = fetch_detail(positionId,headers,cookies)
                 r.hmset("postion:"+str(positionId),res)
                 print(str(positionId)+"已经写入redis中")
             r.hmset(key,t)
 
 # 获取职位详情
-def fetchDetail(id,headers={}):
+def fetch_detail(id,headers,cookies):
     detailUrl = 'http://m.lagou.com/jobs/'+str(id)+".html"
-    res = requests.get(detailUrl,headers=headers)
+    res = session.get(detailUrl,headers=headers,cookies=cookies)
     if res.status_code != 200:
         print("请求出错"+str(res.text))
         return False
@@ -68,18 +119,7 @@ def fetchDetail(id,headers={}):
     return d
     # print(q(".content").text())
 
-if __name__ == '__main__':
 
-    #职位列表的json接口 需要登陆 带cookie
-    page = 1
-    pageSize = 100#最大支持100
-    API_URL = 'http://m.lagou.com/listmore.json?pageNo='+str(page)+'&pageSize='+str(pageSize)
-    #cookie替换成自己登录后的cookie
-    cookie = 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1531361076,1532319384; LGUID=20180723131853-e4343a35-8e37-11e8-9ee6-5254005c3644; LGSID=20180723135216-8dffe0ce-8e3c-11e8-a327-525400f775ce; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fpassport.lagou.com%2Flogin%2Flogin.html; LG_LOGIN_USER_ID=564f3b59e53c65db601e411a55fa01278ce7cf79cb588be8; _putrc=51AF6FA824D5BE21; login=true; unick=%E7%94%B0%E9%9B%B7; gate_login_token=a47b874276333f9f31e46da6185e63a0935573d160846c4d; _gat=1; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1532325155; LGRID=20180723135240-9c59f5b7-8e3c-11e8-a327-525400f775ce'
-    headers = {'user-agent': 'my-app/0.0.1','cookie':cookie}
-
-    data = fetch(API_URL,headers=headers)
-    insert(data)
 
 
 
