@@ -46,6 +46,9 @@ def fetch_boss_detail(url):
         result['name'] = (q('.job-banner .name').text().split(" "))[0]
         result['create_time'] = q('.job-tags .time').text()
         result['body'] = q('.text').text()
+        result['location-address'] = q('.location-address').text()
+        if "工作职责" in result['body']:
+            print(1)
         return result
     pass
 
