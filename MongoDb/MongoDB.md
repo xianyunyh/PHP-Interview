@@ -235,15 +235,15 @@ db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : 1}}}])
 # select by_user, count(*) from mycol group by by_user
 ```
 
-| $sum      | 计算总和。                                     | db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : "$likes"}}}]) |
+| `$sum`      | 计算总和。                                     | db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : "$likes"}}}]) |
 | --------- | ---------------------------------------------- | ------------------------------------------------------------ |
-| $avg      | 计算平均值                                     | db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$avg : "$likes"}}}]) |
-| $min      | 获取集合中所有文档对应值得最小值。             | db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$min : "$likes"}}}]) |
+| `$avg`      | 计算平均值                                     | db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$avg : "$likes"}}}]) |
+| `$min`      | 获取集合中所有文档对应值得最小值。             | db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$min : "$likes"}}}]) |
 | $max      | 获取集合中所有文档对应值得最大值。             | db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$max : "$likes"}}}]) |
-| $push     | 在结果文档中插入值到一个数组中。               | db.mycol.aggregate([{$group : {_id : "$by_user", url : {$push: "$url"}}}]) |
+| `$push`     | 在结果文档中插入值到一个数组中。               | db.mycol.aggregate([{$group : {_id : "$by_user", url : {$push: "$url"}}}]) |
 | $addToSet | 在结果文档中插入值到一个数组中，但不创建副本。 | db.mycol.aggregate([{$group : {_id : "$by_user", url : {$addToSet : "$url"}}}]) |
 | $first    | 根据资源文档的排序获取第一个文档数据。         | db.mycol.aggregate([{$group : {_id : "$by_user", first_url : {$first : "$url"}}}]) |
-| $last     | 根据资源文档的排序获取最后一个文档数据         | db.mycol.aggregate([{$group : {_id : "$by_user", last_url : {$last : "$url"}}}]) |
+| `$last`     | 根据资源文档的排序获取最后一个文档数据         | db.mycol.aggregate([{$group : {_id : "$by_user", last_url : {$last : "$url"}}}]) |
 
  聚合框架中常用的几个操作：
 
@@ -263,6 +263,50 @@ db.articles.aggregate( [
 	] );  
 #$match用于获取分数大于70小于或等于90记录，然后将符合条件的记录送到下一阶段$group管道操作符进行处理。
 ```
+
+**聚合后排序操作**
+
+```bash
+db.getCollection('position').aggregate({
+    "$group": {
+        "_id": "$create_time",
+        "count": {
+            "$sum": 1
+        }
+    }
+    
+},{
+        "$sort": {
+            "_id": -1
+        }
+})
+```
+
+**起别名**
+
+```bash
+db.getCollection('position').aggregate({
+    "$group": {
+        "_id": "$create_time",
+        "count": {
+            "$sum": 1
+        }
+    }
+    
+},{
+        "$sort": {
+            "_id": -1
+        }
+    },{
+        "$project": {
+            "date": "$_id",
+            "count": 1,
+            "_id": 0
+        }
+    })
+```
+
+
 
 
 
