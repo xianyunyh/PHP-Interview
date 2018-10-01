@@ -2,11 +2,10 @@
 
 这个项目是自己准备面试整理的资料。可能包括PHP、MySQL等资料。方便自己以后查阅，会不定期更新，如果错误，请指出，谢谢。欢迎大家提交PR，谢谢大家的star
 
-有童鞋提议整理成gitbook的版本的。于是我又开了一个gitbook的分支。来完善这个。目前还没整理完成。
-
 可以通过[https://xianyunyh.gitbooks.io/php-interview/](https://xianyunyh.gitbooks.io/php-interview/)预览。欢迎有精力的朋友完善一下。谢谢。
 
-[GITbooK分支](https://github.com/xianyunyh/PHP-Interview/tree/gitbook)
+
+### 目录
 
 - [Linux](Linux/REAMDE.md)
 
@@ -101,8 +100,18 @@
 
 - [面试](面试/README.md)
 
-  
 
+
+
+## 生成自己的Gitbook
+
+```bash
+$ npm install gitbook-cli -g
+$ git clone https://github.com/xianyunyh/PHP-Interview
+$ cd PHP-Interview
+$ gitbook serve # 本地预览
+$ gitbook build # 生成静态的html
+```
 ##推荐阅读资料
 
 - [PHP函数库](http://overapi.com/php)
@@ -122,4 +131,4 @@
 
 如果这个系列的文章，对您有所帮助，您可以选择打赏一下作者。谢谢！
 
-![](mm_reward_qrcode.jpg)
+![qrcode](mm_reward_qrcode.jpg)
