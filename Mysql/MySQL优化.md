@@ -34,9 +34,8 @@ select * from user where name like '%a'
 
 - 应尽量避免在where子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描
 
-- 很多时候用 exists 代替 in 是一个好的选择：
+- 很多时候用 exists 代替 in 是一个好的选择
 
-- 
 
 ## btree索引
 
