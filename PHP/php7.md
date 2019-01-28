@@ -35,7 +35,7 @@ if(isset($_GET['a'])) {
 $a = isset($_GET['a']) ? $_GET['a'] : 'none';
 
 #PHP 7
-$a = isset($_GET['a']) ?? 'none';
+$a = $_GET['a'] ?? 'none';
 
 ```
 
@@ -50,7 +50,7 @@ function sumOfInts(int ...$ints)
 {
     return array_sum($ints);
 }
-ar_dump(sumOfInts(2, '3', 4.1)); // int(9)
+var_dump(sumOfInts(2, '3', 4.1)); // int(9)
 # 严格模式
 declare(strict_types=1);
 
@@ -352,10 +352,8 @@ function handler(Throwable $e) { ... }
 list 会按照原来的顺序进行赋值。不再是逆序了
 
 ```php
-list($a,$b,$c) = [1,2,3];
-var_dump($a);//1
-var_dump($b);//2
-var_dump($c);//3
+list($array[], $array[], $array[]) = [1, 2, 3];
+var_dump($array); // [1, 2, 3]
 ```
 
 list不再支持解开字符串、
