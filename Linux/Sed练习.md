@@ -1,41 +1,39 @@
 ## sed
 
-sed：Stream Editor文本流编辑，sed是一个“非交互式的”面向字符流的编辑器。能同时处理多个文件多行的内容，可以不对原文件改动，把整个文件输入到屏幕,可以把只匹配到模式的内容输入到屏幕上。还可以对原文件改动，但是不会再屏幕上返回结果。 
+sed：Stream Editor 文本流编辑，sed 是一个“非交互式的”面向字符流的编辑器。能同时处理多个文件多行的内容，可以不对原文件改动，把整个文件输入到屏幕， 可以把只匹配到模式的内容输入到屏幕上。还可以对原文件改动，但是不会再屏幕上返回结果。**sed 命令的语法格式：**
 
-**sed命令的语法格式：**
+sed 的命令格式：`sed [option] 'sed command'filename`
 
-sed的命令格式： `sed [option] 'sed command'filename`
+sed 的脚本格式：`sed [option] -f 'sed script'filename`
 
-sed的脚本格式：`sed [option] -f 'sed script'filename`
+**sed 命令的选项 (option)：**
 
-**sed命令的选项(option)：**
+-n：只打印模式匹配的行
 
--n ：只打印模式匹配的行
+-e：直接在命令行模式上进行 sed 动作编辑，此为默认选项
 
--e ：直接在命令行模式上进行sed动作编辑，此为默认选项
+-f：将 sed 的动作写在一个文件内，用–f filename 执行 filename 内的 sed 动作
 
--f ：将sed的动作写在一个文件内，用–f filename 执行filename内的sed动作
+-r：支持扩展表达式
 
--r ：支持扩展表达式
+-i：直接修改文件内容
 
--i ：直接修改文件内容
+**sed 在文件中查询文本的方式：**
 
-**sed在文件中查询文本的方式：**
+**1) 使用行号，可以是一个简单数字，或是一个行号范围 **
 
-**1)使用行号，可以是一个简单数字，或是一个行号范围**
-
-| x                 | x为行号                      |
+| x                 | x 为行号                      |
 | ----------------- | ---------------------------- |
-| x,y               | 表示行号从x到y               |
+| x,y               | 表示行号从 x 到 y               |
 | /pattern          | 查询包含模式的行             |
 | /pattern /pattern | 查询包含两个模式的行         |
 | pattern/,x        | 在给定行号上查询包含模式的行 |
 | x,/pattern/       | 通过行号和模式查询匹配的行   |
-| x,y!              | 查询不包含指定行号x和y的行   |
+| x,y!              | 查询不包含指定行号 x 和 y 的行   |
 
-**sed的编辑命令(sed command)：**
+**sed 的编辑命令 (sed command)：**
 
-| p          | 打印匹配行（和-n选项一起合用）                               |
+| p          | 打印匹配行（和 - n 选项一起合用）|
 | ---------- | ------------------------------------------------------------ |
 | =          | 显示文件行号                                                 |
 | a\         | 在定位行号后附加新文本信息                                   |
@@ -46,73 +44,72 @@ sed的脚本格式：`sed [option] -f 'sed script'filename`
 | r filename | 从另一个文件中读文本，类似输入重定向 <                       |
 | s          | 使用替换模式替换相应模式                                     |
 | q          | 第一个模式匹配完成后退出或立即退出                           |
-| l          | 显示与八进制ACSII代码等价的控制符                            |
+| l          | 显示与八进制 ACSII 代码等价的控制符                            |
 | {}         | 在定位行执行的命令组，用分号隔开                             |
 | n          | 从另一个文件中读文本下一行，并从下一条命令而不是第一条命令开始对其的处理 |
 | N          | 在数据流中添加下一行以创建用于处理的多行组                   |
-| g          | 将模式2粘贴到/pattern n/                                     |
+| g          | 将模式 2 粘贴到 /pattern n/                                     |
 | y          | 传送字符，替换单个字符                                       |
 
 | 操作符                            | 名字      | 效果                                                         |
 | --------------------------------- | --------- | ------------------------------------------------------------ |
-| `[地址范围]/p`                    | 打印      | 打印[指定的地址范围] `3,5/p`                                 |
-| `[地址范围]/d`                    | 删除      | 删除[指定的地址范围]                                         |
-| `s/pattern1/pattern2/`            | 替换      | 将指定行中, 将第一个匹配到的pattern1, 替换为pattern2.        |
-| `[地址范围]/s/pattern1/pattern2/` | 替换      | 在`*地址范围*`指定的每一行中, 将第一个匹配到的pattern1, 替换为pattern2. |
-| `[地址范围]/y/pattern1/pattern2/` | transform | 在`*地址范围*`指定的每一行中, 将pattern1中的每个匹配到pattern2的字符都使用pattern2的相应字符作替换. (等价于tr命令) |
-| `g`                               | 全局      | 在每个匹配的输入行中, 将*每个*模式匹配都作相应的操作. (译者注: 不只局限于第一个匹配) |
+| `[地址范围]/p`                    | 打印      | 打印 [指定的地址范围] `3,5/p`                                 |
+| `[地址范围]/d`                    | 删除      | 删除 [指定的地址范围]                                         |
+| `s/pattern1/pattern2/`            | 替换      | 将指定行中， 将第一个匹配到的 pattern1, 替换为 pattern2.        |
+| `[地址范围]/s/pattern1/pattern2/` | 替换      | 在 `* 地址范围 *` 指定的每一行中， 将第一个匹配到的 pattern1, 替换为 pattern2. |
+| `[地址范围]/y/pattern1/pattern2/` | transform | 在 `* 地址范围 *` 指定的每一行中， 将 pattern1 中的每个匹配到 pattern2 的字符都使用 pattern2 的相应字符作替换。 (等价于 TR 命令） |
+| `g`                               | 全局      | 在每个匹配的输入行中， 将 * 每个 * 模式匹配都作相应的操作。 (译者注： 不只局限于第一个匹配） |
 
-- 过滤PHP.ini中空行和注释
+- 过滤 PHP.ini 中空行和注释
 
-```shell
+```Shell
 sed -n '/^;/!p{/^$/!p}' php.ini
 ```
 
 - 打印指定行数的内容
 
-```shell
+```Shell
 sed -n '3,6'p php.ini
 ```
 
 - 打印匹配行
 
-```shell
-sed -n '/php/p' php.ini
+```Shell
+sed -n '/PHP/p' php.ini
 ```
 
 ### 替换 s
 
-```shell
-sed -n 's/php/PHP/g' php.ini #把php 替换成PHP
+```Shell
+sed -n 's/PHP/PHP/g' php.ini #把 PHP 替换成 PHP
 ```
 
 ### 追加 a\
 
-对源文件追加 加-i
+对源文件追加 加 -i
 
-```shell
-sed '/^test/a\this is a test line' file #将 this is a test line 追加到 以test 开头的行后面：
-sed '/^test/i\this is begin/' #将this is end 追加到匹配的行头
+```Shell
+sed '/^Test/a\this IS a Test line' File #将 this IS a Test line 追加到 以 Test 开头的行后面：sed '/^Test/i\this IS begin/' #将 this IS end 追加到匹配的行头
 ```
 
 - 行尾追加字符
 
-```shell
-sed '/php/s/$/ PHP/' php.ini	
+```Shell
+sed '/PHP/s/$/ PHP/' php.ini	
 ```
 
 - 行首追加
 
-```shell
+```Shell
 sed 's/^/START/'
 ```
 
 ### 删除 d
 
-```shell
-sed '/^$/d' file #删除空白
-sed '1,10d' file # 删除1-10行
-sed '/^$/' file #删除空白行
-sed '/^PHP/d' file #删除PHP开头的行
+```Shell
+sed '/^$/d' File #删除空白
+sed '1,10d' File # 删除 1 -10 行
+sed '/^$/' File #删除空白行
+sed '/^PHP/d' File #删除 PHP 开头的行
 ```
 

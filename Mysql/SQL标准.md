@@ -2,110 +2,104 @@
 
 **SQL 语句主要可以划分为以下 4 个类别。**
 
-**DDL（Data Definition Languages）语句：**数据定义语言，这些语句定义了不同的数据段、数据库、表、列、索引等数据库对象的定义。常用的语句关键字主要包括 create、drop、alter等。
-
-```sql
-CREATE <![TEMPORARY|TEMP]> TABLE [IF NOT EXISTS] tbl_name (
+**DDL（Data Definition Languages）语句：** 数据定义语言，这些语句定义了不同的数据段、数据库、表、列、索引等数据库对象的定义。常用的语句关键字主要包括 create、drop、alter 等。```SQL
+CREATE <![TEMPORARY|TEMP]> TABLE [IF NOT EXISTS] TBL_name (
         column type
-        [ NULL | NOT NULL ] [ UNIQUE ] [ DEFAULT value ]
-        [column_constraint_clause | PRIMARY KEY } [ ... ] ]
-        [, PRIMARY KEY ( column [, ...] ) ]
-        [, CHECK ( condition ) ]
-        [, table constraint ]
+        [Null | NOT Null] [UNIQUE] [DEFAULT value]
+        [column_constraint_Clause | PRIMARY Key} [……] ]
+        [, PRIMARY Key ( column [, ……] ) ]
+        [, Check ( condition) ]
+        [, table constraint]
       )
 
 DROP [TEMPORARY] TABLE [IF EXISTS]
-    tbl_name [, tbl_name] ...
-    [RESTRICT | CASCADE]
+    TBL_name [, TBL_name] ……
+    [RESTRICT | Cascade]
 
-ALTER TABLE table [ * ]
+ALTER TABLE table [*]
         ADD [<!COLUMN>] column type
-ALTER TABLE table [ * ]
-        DROP [ COLUMN ] column
-ALTER TABLE table [ * ]
-        MODIFY [<!COLUMN>] column { <!SET> DEFAULT value | DROP DEFAULT }
-ALTER TABLE table [ * ]
+ALTER TABLE table [*]
+        DROP [COLUMN] column
+ALTER TABLE table [*]
+        MODIFY [<!COLUMN>] column {<!SET> DEFAULT value | DROP DEFAULT }
+ALTER TABLE table [*]
         MODIFY [<!COLUMN>] column column_constraint
-ALTER TABLE table [ * ]
+ALTER TABLE table [*]
         RENAME [<!COLUMN>] column TO newcolumn
 ALTER TABLE table
         RENAME TO newtable
 ALTER TABLE table
         ADD table_constraint
-          ALTER INDEX index_name {VISIBLE | INVISIBLE}
+          ALTER Index Index_name {VISIBLE | INVISIBLE}
 ```
 
-**DQL（Data Query Language SELECT ）数据查询语言，select语句。**
+**DQL（Data Query Language SELECT）数据查询语言，select 语句。**
 
-```sql
+```SQL
 SELECT
-    [ALL | DISTINCT | DISTINCTROW ]
-      [HIGH_PRIORITY]
-      [STRAIGHT_JOIN]
-      [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]
+    [ALL | DISTINCT | DISTINCTROW]
+      [High_PRIORITY]
+      [Straight_JOIN]
+      [SQL_Small_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]
       [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]
-    select_expr [, select_expr ...]
+    select_expr [, select_expr ……]
     [FROM table_references
-      [PARTITION partition_list]
+      [PARTITION partition_List]
     [WHERE where_condition]
     [GROUP BY {col_name | expr | position}
-      [ASC | DESC], ... [WITH ROLLUP]]
+      [ASC | DESC], …… [WITH ROLLUP]]
     [HAVING where_condition]
     [WINDOW window_name AS (window_spec)
-        [, window_name AS (window_spec)] ...]
-    [ORDER BY {col_name | expr | position}
-      [ASC | DESC], ...]
-    [LIMIT {[offset,] row_count | row_count OFFSET offset}]
-    [INTO OUTFILE 'file_name'
-        [CHARACTER SET charset_name]
+        [, window_name AS (window_spec)] ……]
+    [Order BY {col_name | expr | position}
+      [ASC | DESC], ……]
+    [LIMIT {[offset,] Row_count | Row_count OFFSET offset}]
+    [INTO OUTFILE 'File_name'
+        [CHARACTER Set charset_name]
         export_options
-      | INTO DUMPFILE 'file_name'
-      | INTO var_name [, var_name]]
-    [FOR UPDATE | LOCK IN SHARE MODE]]
-    [FOR {UPDATE | SHARE} [OF tbl_name [, tbl_name] ...] [NOWAIT | SKIP LOCKED] 
-      | LOCK IN SHARE MODE]]
+      | INTO DUMPFILE 'File_name'
+      | INTO Var_name [, Var_name]]
+    [FOR UPDATE | Lock IN Share MODE]]
+    [FOR {UPDATE | Share} [OF TBL_name [, TBL_name] ……] [NOWAIT | Skip LOCKED] 
+      | Lock IN Share MODE]]
 ```
 
-**DML（Data Manipulation Language）语句：**数据操纵语句，用于添加、删除、更新和查询数据库记录，并检查数据完整性，常用的语句关键字主要包括 insert、delete、udpate 。(增添改）
-
-```sql
-INSERT INTO tbl_name [ ( column [, ...] ) ]
-        { VALUES ( expression [, ...] ) | SELECT query }
+**DML（Data Manipulation Language）语句：** 数据操纵语句，用于添加、删除、更新和查询数据库记录，并检查数据完整性，常用的语句关键字主要包括 insert、delete、udpate。( 增添改）```SQL
+INSERT INTO TBL_name [( column [, ……] ) ]
+        {VALUES ( expression [, ……] ) | SELECT Query }
 //demo
-INSERT INTO tbl_name (col1,col2) VALUES(15,col1*2);
+INSERT INTO TBL_name (col1,col2) VALUES(15,col1*2);
 ```
 
-```sql
+```SQL
 DELETE FROM table 
-  [ WHERE condition ] 
-  [ORDER BY ...]
-  [LIMIT row_count]
+  [WHERE condition] 
+  [Order BY ……]
+  [LIMIT Row_count]
 ```
 
-```sql
-UPDATE table SET col = expression [,...]
-    [ FROM fromlist ]
-    [ WHERE condition ]
-    [ORDER BY ...]
-    [LIMIT row_count]
+```SQL
+UPDATE table Set col = expression [,……]
+    [FROM fromlist]
+    [WHERE condition]
+    [Order BY ……]
+    [LIMIT Row_count]
 ```
 
-**DCL（Data Control Language）语句：**数据控制语句，用于控制不同数据段直接的许可和访问级别的语句。这些语句定义了数据库、表、字段、用户的访问权限和安全级别。主要的语句关键字包括 grant、revoke 等。
-
-```sql
-GRANT
-    priv_type [(column_list)]
-      [, priv_type [(column_list)]] ...
+**DCL（Data Control Language）语句：** 数据控制语句，用于控制不同数据段直接的许可和访问级别的语句。这些语句定义了数据库、表、字段、用户的访问权限和安全级别。主要的语句关键字包括 Grant、revoke 等。```SQL
+Grant
+    priv_type [(column_List)]
+      [, priv_type [(column_List)]] ……
     ON [object_type] priv_level
-    TO user_or_role [, user_or_role] ...
-    [WITH GRANT OPTION]
+    TO user_or_role [, user_or_role] ……
+    [WITH Grant OPTION]
 
-GRANT PROXY ON user_or_role
-    TO user_or_role [, user_or_role] ...
-    [WITH GRANT OPTION]
+Grant PROXY ON user_or_role
+    TO user_or_role [, user_or_role] ……
+    [WITH Grant OPTION]
 
-GRANT role [, role] ...
-    TO user_or_role [, user_or_role] ...
+Grant role [, role] ……
+    TO user_or_role [, user_or_role] ……
     [WITH ADMIN OPTION]
 
 object_type: {
@@ -116,21 +110,19 @@ object_type: {
 
 priv_level: {
 
-  | db_name.*
-  | db_name.tbl_name
-  | tbl_name
-  | db_name.routine_name
+  | DB_name.*
+  | DB_name.tbl_name
+  | TBL_name
+  | DB_name.routine_name
 }
 
 user_or_role: {
     user
   | role
 }
-GRANT ALL ON db1.* TO 'jeffrey'@'localhost';
+Grant ALL ON DB1.* TO 'Jeffrey'@'localhost';
 ```
 
-参考资料：
+参考资料：SQL92 HTTP://owen.sj.ca.us/rkowen/howto/SQL92F.html
 
-SQL92 http://owen.sj.ca.us/rkowen/howto/sql92F.html
-
-MySql文档 https://dev.mysql.com/doc/refman/8.0/en/sql-syntax.html
+MySql 文档 https://dev.mysql.com/Doc/refman/8.0/EN/SQL-syntax.html

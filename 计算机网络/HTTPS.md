@@ -1,2 +1,2 @@
-![](http://tenny.qiniudn.com/HTTPQUBIE2.png)
+![](HTTP://tenny.qiniudn.com/HTTPQUBIE2.png)
 
