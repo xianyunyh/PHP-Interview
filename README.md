@@ -4,7 +4,7 @@
 
 可以通过 [https://xianyunyh.gitbooks.io/PHP-interview/](https://xianyunyh.gitbooks.io/PHP-interview/) 预览。欢迎有精力的朋友完善一下。谢谢。### 目录
 
-- [Linux](Linux/REAMDE.md)
+- [Linux](Linux/README.md)
 
   - [Linux 基本命令](https://github.com/xianyunyh/PHP-Interview/blob/Master/Linux/Linux%E5%91%BD%E4%BB%A4.md)
   - [Crontab](Linux/crontab.md)
@@ -12,7 +12,7 @@
   - [Linux-Inode 介绍](Linux/inode.md)
   - [VIM 编辑器](Linux/Vim.md)
   - [Lnmp/Lamp](Linux/lanmp.md)
-  - [LinuxIO 模型。MD](Linux/LinuxIO 模型。MD)
+  - [LinuxIO 模型。MD](Linux/LinuxIO模型.md)
 
 - [数据库](Mysql/README.md)
 
@@ -20,36 +20,36 @@
 
   - [Mongodb](MongoDb/MongoDB.md)
 
-- [计算机网络](计算机网络 /README.md)
+- [计算机网络](计算机网络/README.md)
 
-  - [Ip 协议](计算机网络 /Ip 协议。MD)
+  - [Ip 协议](计算机网络/IP协议.md)
 
-  - [TCP 协议](计算机网络 /TCP 协议。MD)
-  - [UDP 协议](计算机网络 /UDP 协议。MD)
-  - [HTTP 协议](计算机网络 /HTTP 协议）
-  - [https/HTTP2/HTTP](计算机网络 /HTTP2.md)
+  - [TCP 协议](计算机网络/TCP协议.md)
+  - [UDP 协议](计算机网络/UDP协议.md)
+  - [HTTP 协议](计算机网络/HTTP协议.md)
+  - [https/HTTP2/HTTP](计算机网络/HTTP2.md)
 
-- [版本控制器](版本控制器 /Git.md)
+- [版本控制器](版本控制器/Git.md)
 
-  - [Git](版本控制器 /Git.md)
+  - [Git](版本控制器/Git.md)
   - [SVN]()
 
-- [数据结构](数据结构 /README.md)
+- [数据结构](数据结构/README.md)
 
-  - [数组](数据结构 / 数组。MD)
-  - [链表](数据结构 / 链表。MD)
-  - [队列](数据结构 / 队列。MD)
-  - [栈](数据结构 / 栈。MD)
-  - [堆](数据结构 / 堆。MD)
-  - [集合](数据结构 / 集合。MD)
-  - [树](数据结构 / 树。MD)
+  - [数组](数据结构/数组.md)
+  - [链表](数据结构/链表.md)
+  - [队列](数据结构/队列.md)
+  - [栈](数据结构/栈.md)
+  - [堆](数据结构/堆.md)
+  - [集合](数据结构/集合.md)
+  - [树](数据结构/树.md)
     - [二叉树]()
     - [二叉查找树]()
     - [红黑树]()
     - [B-Tree、B+Tree]()
   - [图]()
 
-- [算法](算法 /README.md)
+- [算法](算法/README.md)
 
   - [排序算法]()
     - [冒泡排序](https://github.com/PuShaoWei/arithmetic-PHP/blob/Master/package/Sort/BubbleSort.php)
@@ -93,9 +93,9 @@
   - [HashTable](https://github.com/xianyunyh/PHP-Interview/blob/Master/PHP/PHP7-HashTable.md)
   - [Swoole]()
 
-- [设计模式](设计模式 /README.md)
+- [设计模式](设计模式/README.md)
 
-- [面试](面试 /README.md)
+- [面试](面试/README.md)
 
 
 
@@ -126,4 +126,4 @@ $ gitbook build # 生成静态的 HTML
 
 
 
-如果这个系列的文章，对您有所帮助，您可以选择打赏一下作者。谢谢！![qrcode](Mm_reward_qrcode.jpg)
+如果这个系列的文章，对您有所帮助，您可以选择打赏一下作者。谢谢！![qrcode](mm_reward_qrcode.jpg)
