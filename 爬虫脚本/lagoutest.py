@@ -3,8 +3,8 @@
 from lagou import login,get_cookies,fetch_detail,fetch
 
 if __name__ == "__main__":
-    username = ''
-    passwd = ''
+    username = '13856077103'
+    passwd = '4591341123'
     login(username, passwd)
     cookies = get_cookies()
     print(cookies)

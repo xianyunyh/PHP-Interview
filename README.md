@@ -2,11 +2,10 @@
 
 这个项目是自己准备面试整理的资料。可能包括PHP、MySQL等资料。方便自己以后查阅，会不定期更新，如果错误，请指出，谢谢。欢迎大家提交PR，谢谢大家的star
 
-有童鞋提议整理成gitbook的版本的。于是我又开了一个gitbook的分支。来完善这个。目前还没整理完成。
-
 可以通过[https://xianyunyh.gitbooks.io/php-interview/](https://xianyunyh.gitbooks.io/php-interview/)预览。欢迎有精力的朋友完善一下。谢谢。
 
-[GITbooK分支](https://github.com/xianyunyh/PHP-Interview/tree/gitbook)
+
+### 目录
 
 - [Linux](Linux/REAMDE.md)
 
@@ -101,10 +100,18 @@
 
 - [面试](面试/README.md)
 
-  
 
-##推荐阅读资料
+## 生成自己的Gitbook
 
+```bash
+$ npm install gitbook-cli -g
+$ git clone https://github.com/xianyunyh/PHP-Interview
+$ cd PHP-Interview
+$ gitbook serve # 本地预览
+$ gitbook build # 生成静态的html
+```
+
+## 推荐阅读资料
 - [PHP函数库](http://overapi.com/php)
 - [PHP7内核剖析](https://github.com/pangudashu/php7-internal)
 - [php7-internal](https://github.com/laruence/php7-internal)
@@ -118,8 +125,13 @@
 - [数据结构和算法](http://www.cnblogs.com/skywang12345/p/3603935.html)
 - [剑指offer-PHP实现](https://blog.csdn.net/column/details/15795.html)
 
+## 致谢
+
+- [OMGZui](https://github.com/OMGZui)
+- [fymmx](https://github.com/fymmx)
+
 
 
 如果这个系列的文章，对您有所帮助，您可以选择打赏一下作者。谢谢！
 
-![](mm_reward_qrcode.jpg)
+![qrcode](mm_reward_qrcode.jpg)

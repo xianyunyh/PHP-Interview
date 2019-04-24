@@ -1,14 +1,14 @@
 ## 目录
 
-- [操作系统概述](https://github.com/xianyunyh/PHP-Interview/tree/master/Linux#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0)
-- [Linux历史](https://github.com/xianyunyh/PHP-Interview/tree/master/Linux#gnu%E5%92%8Cgpl)
-- [Linux基本命令](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4.md)
-- [Linux(磁盘网络相关命令)](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/Linux%E5%91%BD%E4%BB%A42.md)
-- [Crontab计划任务](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/crontab.md)
-- [shell](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/shell.md)
-- [进程和线程](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/shell.md)
-- [AWK命令](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/AWK%E7%BB%83%E4%B9%A0.md)
-- [SED命令](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/Sed%E7%BB%83%E4%B9%A0.md)
+- [操作系统概述](Linux#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0)
+- [Linux历史](#gnu%E5%92%8Cgpl)
+- [Linux基本命令](Linux%E5%91%BD%E4%BB%A4.md)
+- [Linux(磁盘网络相关命令)](Linux%E5%91%BD%E4%BB%A42.md)
+- [Crontab计划任务](crontab.md)
+- [shell](shell.md)
+- [进程和线程](进程和线程.md)
+- [AWK命令](AWK%E7%BB%83%E4%B9%A0.md)
+- [SED命令](Sed%E7%BB%83%E4%B9%A0.md)
 
 
 

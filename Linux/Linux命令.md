@@ -134,7 +134,7 @@ sed '/^$/d' file #删除空白行
 详细教程可以查看 http://awk.readthedocs.io/en/latest/chapter-one.html
 
 ```shell
-awk ' BEGIN{ statements } statements2 END{ statements } '	
+awk ' BEGIN{ statements } statements2 END{ statements } '
 ```
 
 工作流程
@@ -161,11 +161,11 @@ $2:第二个字段的文本内容；
 awk '{print $2, $3}' file
 # 日志格式：'$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for"'
 #统计日志中访问最多的10个IP
-awk '{a[$1]++}END{for(i in a)print a[i],i|"sort -k1 -nr|head -n10"}' access.log 
+awk '{a[$1]++}END{for(i in a)print a[i],i|"sort -k1 -nr|head -n10"}' access.log
 
 ```
 
-### 排序 port
+### 排序 sort
 
 - -n 按数字进行排序 VS -d 按字典序进行排序
 - -r 逆序排序

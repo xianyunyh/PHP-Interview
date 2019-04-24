@@ -19,7 +19,7 @@
 
 ```shell
 * * * * * echo "hello" #每1分钟执行hello
-3,15 * * * * myCommand #每小时第三分钟和第五分钟执行
+3,15 * * * * myCommand #每小时第三分钟和第十五分钟执行
 3,15 8-11 * * * myCommand# 在上午8点到11点的第3和第15分钟执行
 3,15 8-11 */2  *  * myCommand #每隔两天的上午8点到11点的第3和第15分钟执行
 30 21 * * * /etc/init.d/smb restart #每晚的21:30重启smb
