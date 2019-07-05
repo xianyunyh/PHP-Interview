@@ -1,6 +1,6 @@
 ## :pencil2:Leetcode经典二叉树题目集合
 
-####php-leetcode之路 [Leetcode-php](https://github.com/wuqinqiang/leetcode-php)
+#### php-leetcode之路 [Leetcode-php](https://github.com/wuqinqiang/leetcode-php)
 ****
 ### :pencil2:1.二叉树的前序遍历（leetcode144）
 
@@ -613,6 +613,11 @@ class Solution {
 ```
 ****
 
+### 联系
+
+<a href="https://github.com/wuqinqiang/">
+​    <img src="https://github.com/wuqinqiang/Lettcode-php/blob/master/qrcode_for_gh_c194f9d4cdb1_430.jpg" width="150px" height="150px">
+</a> 
 
     
     
