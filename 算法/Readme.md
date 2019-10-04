@@ -131,25 +131,33 @@ function SelectSort(array $container)
 
 - [快速排序](https://github.com/xianyunyh/arithmetic-php/blob/master/package/Sort/QuickSort.php)
 
+> 快速排序（Quicksort）是对冒泡排序的一种改进。他的基本思想是：通过一趟排序将待排记录分割成独立的两部分，其中一部分的关键字均比另一部分记录的关键字小，则可分别对这两部分记录继续进行快速排序，整个排序过程可以递归进行，以达到整个序列有序的目的。
+
 ```php
-function QuickSort(array $container)
+function QuickSort(&$arr,$low,$high)
 {
-    $count = count($container);
-    if ($count <= 1) { // 基线条件为空或者只包含一个元素，只需要原样返回数组
-        return $container;
+    if ($low < $high) {
+        $middle = getMiddle($arr,$low,$high);
+        QuickSort($arr,$low,$middle-1);
+        QuickSort($arr,$middle+1,$high);
     }
-    $pivot = $container[0]; // 基准值 pivot
-    $left  = $right = [];
-    for ($i = 1; $i < $count; $i++) {
-        if ($container[$i] < $pivot) {
-            $left[] = $container[$i];
-        } else {
-            $right[] = $container[$i];
+}
+
+function getMiddle (&$arr,$low,$high)
+{
+    $temp = $arr[$low];
+    while ($low < $high) {
+        while($low < $high && $temp <= $arr[$high]) {
+            $high --;
         }
+        $arr[$low] = $arr[$high];
+        while ($low < $high && $temp >= $arr[$low]) {
+            $low ++;
+        }
+        $arr[$high] = $arr[$low];
     }
-    $left  = QuickSort($left);
-    $right = QuickSort($right);
-    return array_merge($left, [$container[0]], $right);
+    $arr[$low] = $temp;
+	return $low;
 }
 ```
 
