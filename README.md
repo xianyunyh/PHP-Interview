@@ -1,4 +1,4 @@
-## PHP面试准备的资料
+## <center>PHP面试准备的资料 </center>
 
 这个项目是自己准备面试整理的资料。可能包括PHP、MySQL等资料。方便自己以后查阅，会不定期更新，如果错误，请指出，谢谢。欢迎大家提交PR，谢谢大家的star
 
@@ -8,7 +8,8 @@
 ### 目录
 
 - [Linux](Linux/REAMDE.md)
-
+  - [操作系统简述](操作系统/Readme.md)
+  - [进程和线程](Linux/进程和线程.md)
   - [Linux基本命令](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4.md)
   - [Crontab](Linux/crontab.md)
   - [Shell](Linux/shell.md)
