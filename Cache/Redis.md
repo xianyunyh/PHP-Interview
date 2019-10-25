@@ -39,3 +39,10 @@ redis是一个开源的支持多种数据类型的key=>value的存储数据库�
 > hset、hget、hmget、hmset、hkeys、hlen、hsetnx、hvals
 
 
+### redis 各种类型的场景使用
+
+- string 就是存储简单的key=>value的字符串
+- list 使用场景。做先进先出的消费队列
+- set 进行集合过滤重复元素
+- zset 有序集合，排行榜 TOP N
+- hash 适合存储一组数据，比如用户的信息 以用户id为键，里面记录用户的昵称等信息。

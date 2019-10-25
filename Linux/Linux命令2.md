@@ -2,13 +2,13 @@
 
 查看磁盘空间利用大小
 
-```
+```shell
 df -h
 ```
 
 查看当前目录所占空间大小
 
-```
+```shell
 du -sh
 ```
 
@@ -59,21 +59,21 @@ netstat 命令用于显示各种网络相关信息，如网络连接，路由表
 
 列出所有端口 (包括监听和未监听的):
 
-```
+```shell
 netstat -a
 
 ```
 
 列出所有 tcp 端口:
 
-```
+```shell
 netstat -at
 
 ```
 
 列出所有有监听的服务状态:
 
-```
+```shell
 netstat -l
 ```
 
@@ -82,7 +82,7 @@ netstat -l
 缺省时free的单位为KB
 
 ```shell
-$free
+$ free
 total       used       free     shared    buffers     cached
 Mem:       8175320    6159248    2016072          0     310208    5243680
 -/+ buffers/cache:     605360    7569960

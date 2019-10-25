@@ -2,7 +2,7 @@
 
 > Websocket是html5提出的一个协议规范，参考rfc6455。
 >
-> websocket约定了一个通信的规范，通过一个握手的机制，客户端（浏览器）和服务器（webserver）之间能建立一个类似tcp的连接，从而方便c－s之间的通信。在websocket出现之前，web交互一般是基于http协议的短连接或者长连接。
+> websocket约定了一个通信的规范，通过一个握手的机制，客户端（浏览器）和服务器（webserver）之间能建立一个类似tcp的连接，从而方便C-S之间的通信。在websocket出现之前，web交互一般是基于http协议的短连接或者长连接。
 >
 > WebSocket是为解决客户端与服务端实时通信而产生的技术。websocket协议本质上是一个基于tcp的协议，是先通过HTTP/HTTPS协议发起一条特殊的http请求进行握手后创建一个用于交换数据的TCP连接，此后服务端与客户端通过此TCP连接进行实时通信。
 
@@ -10,7 +10,7 @@
 
 ### Websocket和HTTP协议的关系
 
-同样作为应用层的协议，WebSocket在现代的软件开发中被越来越多的实践，和HTTP有很多相似的地方，这里将它们简单的做一个纯个人、非权威的比较：
+同样作为应用层的协议，WebSocket在现代的软件开发中被越来越多的实践，和HTTP有很多相似的地方，这里将它们简单比较：
 
 #### 相同点
 
@@ -58,12 +58,10 @@ Sec-WebSocket-Version: 13
 
 ```http
 HTTP/1.1 101 Switching Protocols
-Content-Length: 0
 Upgrade: websocket
 Sec-Websocket-Accept: ZEs+c+VBk8Aj01+wJGN7Y15796g=
-Server: TornadoServer/4.5.1
 Connection: Upgrade
-Date: Wed, 21 Jun 2017 03:29:14 GMT
+Sec-WebSocket-Protocol: chat, superchat
 ```
 
 Sec-Websocket-Accept 是一个校验。用客户端发来的sec_key 服务器通过sha1计算拼接商GUID【258EAFA5-E914-47DA-95CA-C5AB0DC85B11 】 。然后再base64encode 
@@ -96,10 +94,95 @@ Sec-Websocket-Accept 是一个校验。用客户端发来的sec_key 服务器通
 
 - Payload data：任意长度数据。包含有扩展定义数据和应用数据，如果没有定义扩展则没有此项，仅含有应用数据。
 
+### 服务端简单实现
+```php
+// 封装ws 协议的数据包
+function build($msg) {
+    $frame = [];
+    $frame[0] = '81'; // 81 就是 10000001 第一位1表示最后一个数据段，最后一位1表示这是文本数据
+    $len = strlen($msg);
+    if ($len < 126) {
+      //7位长度 第一个是掩码 默认是0
+      //小于126的时候 也是 01111110 数据包第二个字节表示长度
+        $frame[1] = $len < 16 ? '0' . dechex($len) : dechex($len);
+    } else if ($len < 65025) {
+      //7位 + 16位  01111110 00000000 00000000
+        $s = dechex($len);
+        $frame[1] = '7e' . str_repeat('0', 4 - strlen($s)) . $s;
+    } else {
+      //7位 + 64位  01111111 00000000 00000000
+        $s = dechex($len);
+        $frame[1] = '7f' . str_repeat('0', 16 - strlen($s)) . $s;
+    }
+    $data = '';
+    $l = strlen($msg);
+    for ($i = 0; $i < $l; $i++) {
+        $data .= dechex(ord($msg{$i}));
+    }
+    //最后是数据内容
+    $frame[2] = $data;
+    $data = implode('', $frame);
+    return pack("H*", $data);
+}
+//拆包
+function parse($buffer) {
+        $decoded = '';
+        $len = ord($buffer[1]) & 127;
+        if ($len === 126) {
+            $masks = substr($buffer, 4, 4);
+            $data = substr($buffer, 8);
+        } else if ($len === 127) {
+            $masks = substr($buffer, 10, 4);
+            $data = substr($buffer, 14);
+        } else {
+            $masks = substr($buffer, 2, 4);
+            $data = substr($buffer, 6);
+        }
+        for ($index = 0; $index < strlen($data); $index++) {
+            $decoded .= $data[$index] ^ $masks[$index % 4];
+        }
+        return $decoded;
+    }
+$socket = stream_socket_server("tcp://0.0.0.0:8888", $errno, $errstr);
+if (!$socket) {
+    echo "$errstr ($errno)<br />\n";
+    die;
+}
+while (1) {
+    $conn = stream_socket_accept($socket);
+    $data = stream_get_contents($conn,500);
+    $data = explode("\r\n",$data);
+    $secKey = "";
+    foreach ($data as $key=>$val) {
+        if (strpos($val,"WebSocket-Key:") >= 1 ) {
+            $key = explode(":",$val );
+            $secKey = $key[1];
+        }
+    }
+    //固定key 算法 base64(sha1(key+258EAFA5-E914-47DA-95CA-C5AB0DC85B11))
+    $hashkey =   base64_encode(sha1(trim($secKey)."258EAFA5-E914-47DA-95CA-C5AB0DC85B11",true));
+    $ws = "HTTP/1.1 101 Switching Protocols\r\n";
+    $ws .= "Upgrade: websocket\r\n";
+    $ws .= "Connection: Upgrade\r\n";
+    $ws .= "Sec-WebSocket-Version:13\r\n";
+    $ws .= "Sec-WebSocket-Accept: $hashkey\r\n";
+    $ws .= "Sec-WebSocket-Protocol: chat\r\n";
+    $ws .= "\r\n";
+    if (!$conn) {
+        continue;
+    }
+    fwrite($conn, $ws);
+    fwrite($conn,build("hello"));
+    fclose($conn);
+    break;
+}
+fclose($socket);
+```
+
 ### 客户端
 
 ```js
-var websocket = new WebSocket("ws://127.0.0.1")
+var websocket = new WebSocket("ws://127.0.0.1:8888","chat")
 websocket.onopen = function(){
     
 }

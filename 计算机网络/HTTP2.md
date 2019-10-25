@@ -39,7 +39,7 @@ HTTP1.0最早在网页中使用是在1996年，那个时候只是使用一些较
 3. HTTP和HTTPS使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。
 4. HTTPS可以有效的防止运营商劫持，解决了防劫持的一个大问题。
 
-![img](http://tenny.qiniudn.com/HTTPQUBIE2.png)
+![img](images/https.png)
 
 ## 使用SPDY加快你的网站速度
 
@@ -64,5 +64,23 @@ SPDY位于HTTP之下，TCP和SSL之上，这样可以轻松兼容老版本的HTT
 - **header压缩，**如上文中所言，对前面提到过HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。
 - **服务端推送**（server push），同SPDY一样，HTTP2.0也具有server push功能。目前，有大多数网站已经启用HTTP2.0，例如[YouTuBe](https://www.youtube.com/)，[淘宝网](http://www.taobao.com/)等网站，利用chrome控制台可以查看是否启用H2
 
-![img](http://tenny.qiniudn.com/diff332.png)
+![img](images/http2.png)
 
+```conf
+server {
+	listen 443 ssl http2;
+	server_name example.com;
+	root /var/www/example.com/public;
+
+	# SSL
+	ssl_certificate /etc/live/example.com/fullchain.pem;
+	ssl_certificate_key /etc/live/example.com/privkey.pem;
+	ssl_trusted_certificate /etc/live/example.com/chain.pem;
+
+	# index.html fallback
+	location / {
+		try_files $uri $uri/ /index.html;
+	}
+}
+
+```

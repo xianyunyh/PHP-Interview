@@ -120,12 +120,3 @@ AddType application/x-httpd-php .php
 ```SHELL
 service httpd restart
 ```
-
-
-
-### Lnmp安装
-
-
-
-
-

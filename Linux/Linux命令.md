@@ -47,6 +47,7 @@ cat a.text| less
 
 ```shell
 ls /proc && echo  suss! || echo failed.
+cat access.log >> test.log
 ```
 
 ## 文本处理
