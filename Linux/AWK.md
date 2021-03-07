@@ -100,13 +100,13 @@ awk '/^UUID/{fs[$3]++}END{for(i in fs){print i,fs[i]}}' /etc/fstab
 - 统计日志最多的10个IP
 
 ```shell
-awk '{arr[$1]++} END {for(i in arr) {print arr[i]}}' access.log | sort -k1 -nr | head -n10
+awk '{arr[$1]++} END {for(i in arr) {print i}}' access.log | sort -k1 -nr | head -n10
 ```
 
 - 统计日志访问次数大于100次的IP
 
 ```shell
-awk '{arr[$1]++} END{for (i in arr) {if(arr[i] > 100){print $i}}}' access.log
+awk '{arr[$1]++} END{for (i in arr) {if(arr[i] > 100){print i}}}' access.log
 ```
 
 - 统计2016年4月9日内访问最多的10个ip
