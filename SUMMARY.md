@@ -7,15 +7,18 @@
     * [Crontab计划任务](Linux/crontab.md)
     * [Inode介绍](Linux/inode.md)
     * [Shell](Linux/shell.md)
-    * [Sed命令](Linux/Sed练习.md)
-    * [Awk命令](Linux/AWK练习.md)
+    * [Sed命令](Linux/Sed.md)
+    * [Awk命令](Linux/AWK.md)
     * [IO模型](Linux/LinuxIO模型.md)
+    * [Vim编辑器](Linux/Vim.md)
+    * [Nginx](Linux/Nginx.md)
     * [LAMP/LNMP](Linux/lanmp.md)
 * [MySQL部分](Mysql/README.md)
-    * [SQL语法](Mysql/SQL标准.md)
+    * [SQL标准](Mysql/SQL标准.md)
     * [数据库范式](Mysql/MySQL三范式.md)
     * [存储引擎](Mysql/存储引擎.md)
     * [事务](Mysql/事务.md)
+    * [锁](Mysql/锁.md)
     * [索引](Mysql/索引.md)
     * [explain分析SQL](Mysql/explain.md)
     * [MySQL优化](Mysql/MySQL优化.md)
@@ -23,15 +26,20 @@
 * [MongoDB](MongoDb/MongoDB.md)
 * [PHP](PHP/README.md)
     * [PHP7](PHP/php7.md)
-    * [面向对象OOP](https://github.com/xianyunyh/PHP-Interview/blob/master)
     * [Zval结构](PHP/PHP-Zval结构.md)
     * [HashTable](PHP/PHP7-HashTable.md)
-    * [Swoole](https://swoole.com)
     * [PHP运行原理](PHP/PHP运行原理.md)
     * [正则表达式](PHP/正则表达式.md)
     * [PHP-FPM](PHP/PHP-FPM配置选项.md)
+    * [PHP手册笔记](PHP/PHP手册笔记/README.md)
+    * [PHP8](PHP/PHP8.md)
+    * [PHP8.1](PHP/PHP8.1.md)
+    * [PHP8.2](PHP/PHP8.2.md)
+    * [Swoole](https://swoole.com)
 
 ## 操作系统和网络
+* [操作系统](操作系统/README.md)
+    * [进程和线程](操作系统/进程和线程.md)
 * [计算机网络](计算机网络/README.md)
     * [IP协议](计算机网络/IP协议.md)
     * [TCP协议](计算机网络/TCP协议.md)
@@ -39,58 +47,43 @@
     * [HTTP协议](计算机网络/HTTP协议.md)
     * [HTTPS协议](计算机网络/HTTPS.md)
     * [HTTP2协议](计算机网络/HTTP2.md)
-    * [Webscokt](计算机网络/Webscokt.md)
-* [版本控制器](版本控制器/Git.md)
+    * [Websocket](计算机网络/Webscokt.md)
+* [版本控制器](版本控制器/README.md)
     * [Git](版本控制器/Git.md)
+    * [Git移除中间提交](版本控制器/Git_removeCommits.md)
     * SVN
 
 ## 数据结构和算法
 * [数据结构](数据结构/README.md)
     * [数组](数据结构/数组.md)
-    * 链表
-        * 单链表
-        * 双链表
-    * 队列
-    * 栈
-    * 堆
-    * 集合
-    * 树
-        * 二叉树
-        * 二叉查找树
-        * 红黑树
-        * B-Tree、B+Tree
-    * [图](https://github.com/xianyunyh/PHP-Interview/blob/master)
-* [算法](算法/Readme.md)
-    * [排序算法](算法/Readme.md)
+    * [链表](数据结构/链表.md)
+    * [堆栈](数据结构/堆栈.md)
+    * [散列表](数据结构/散列表.md)
+    * [字符串](数据结构/字符串.md)
+    * [二叉树基本操作](数据结构/二叉树基本操作.md)
+    * [Leetcode经典二叉树题目集合](数据结构/Leetcode经典二叉树题目集合.md)
+* [算法](算法/README.md)
+    * [二分查找](算法/二分查找.md)
+    * [动态规划](算法/动态规划.md)
+    * [排序算法](算法/README.md)
         * [冒泡排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/BubbleSort.php)
         * [选择排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/SelectSort.php)
         * [插入排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/InsertSort.php)
         * [快速排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/QuickSort.php)
         * [堆排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/HeapSort.php)
         * [归并排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/MergeSort.php)
-    * 查找算法
+    * [查找算法](算法/二分查找.md)
         * [二分查找](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Query/BinaryQuery.php)
-        * [hash](https://github.com/xianyunyh/PHP-Interview/blob/master)
         * [KPM](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Query/Kmp.php)
-    * 其他
-        * 布隆过滤器
-        * 贪心算法
-        * 回溯算法
-        * 动态规划
-        * 最小生成树
-        * 最短路径
-        * 推荐算法
-        * 深度优先、广度优先
-* [编程之法：面试和算法心得](https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/03.02.html)
-* [剑指offer-PHP实现](https://blog.csdn.net/column/details/15795.html)
+    * [编程之法：面试和算法心得](https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/03.02.html)
+    * [剑指offer-PHP实现](https://blog.csdn.net/column/details/15795.html)
 
 ## 系统设计和架构
 * [架构和系统设计](架构和系统设计/README.md)
+    * [API设计](架构和系统设计/API设计.md)
 * [消息队列](MQ/README.md)
     * [RabbitMQ](MQ/rabbitmq.md)
-    * ActiveMq
-    * Nsq
-    * kafka
+    * [消息队列常见面试题](MQ/question.md)
 * 缓存系统
     * [Redis](Cache/Redis.md)
     * Memcache
@@ -101,14 +94,16 @@
     * [PHP实现23种设计模式](https://github.com/domnikl/DesignPatternsPHP)
 
 ## 面试
+* [面试概述](面试/README.md)
 * [裸辞应对](面试/03裸辞应对.md)
 * [写简历](面试/02写简历.md)
-* [笔试](面试/笔试题.md)
-    * [笔试题1](面试/笔试题.md)
-    * [笔试题2](面试/笔试题2.md)
-    * [笔试题3](面试/笔试题3.md)
-    * [笔试题4](面试/笔试题4.md)
-* [面试问答](面试/01离职原因回答.md)
-    * [离职原因](面试/01离职原因回答.md)
-    * [面试提问](面试/04面试提问.md)
-
+* [谈薪资](面试/05谈薪资.md)
+* [面试提问](面试/04面试提问.md)
+* [离职原因回答](面试/01离职原因回答.md)
+* [笔试题1](面试/笔试题.md)
+* [笔试题2](面试/笔试题2.md)
+* [笔试题3](面试/笔试题3.md)
+* [笔试题4](面试/笔试题4.md)
+* [面试题5](面试/面试题5.md)
+* [面试题6](面试/面试题6.md)
+* [面试总结](面试/面试总结.md)

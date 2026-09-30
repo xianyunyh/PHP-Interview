@@ -1,3 +1,5 @@
+## 常用数据类型整理
+
 复习mysql，整理的资料和笔记
 
 - [SQL标准](https://github.com/xianyunyh/PHP-Interview/tree/master/Mysql/SQL标准.md)

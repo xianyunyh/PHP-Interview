@@ -4,7 +4,8 @@ Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个�
 
 Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。
 
-- [快速入门](https://github.com/xianyunyh/PHP-Interview/blob/master/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%99%A8/Git.md)
+- [Git 快速入门](Git.md)
+- [如何移除中间某些错误的提交](Git_removeCommits.md)
 
 ## Git 与 SVN 区别
 

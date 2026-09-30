@@ -1,115 +1,118 @@
-## <center>PHP面试准备的资料 </center>
+## <center>PHP面试准备的资料</center>
 
-这个项目是自己准备面试整理的资料。可能包括PHP、MySQL等资料。方便自己以后查阅，会不定期更新，如果错误，请指出，谢谢。欢迎大家提交PR，谢谢大家的star
+这个项目是自己准备面试整理的资料，包括 PHP、MySQL、Linux、计算机网络、数据结构与算法、设计模式、消息队列、缓存等内容。方便自己以后查阅，会不定期更新，如有错误，欢迎指出，也欢迎大家提交 PR，谢谢大家的 star。
 
-可以通过[https://xianyunyh.gitbooks.io/php-interview/](https://xianyunyh.gitbooks.io/php-interview/)预览。欢迎有精力的朋友完善一下。谢谢。
-
+📖 **在线阅读**：<https://xianyunyh.github.io/PHP-Interview/>（基于 VitePress 构建，支持全文搜索）
 
 ### 目录
 
-- [Linux](Linux/REAMDE.md)
-  - [操作系统简述](操作系统/Readme.md)
-  - [进程和线程](Linux/进程和线程.md)
-  - [Linux基本命令](https://github.com/xianyunyh/PHP-Interview/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4.md)
-  - [Crontab](Linux/crontab.md)
-  - [Shell](Linux/shell.md)
-  - [Linux-Inode介绍](Linux/inode.md)
-  - [VIM编辑器](Linux/Vim.md)
-  - [Lnmp/Lamp](Linux/lanmp.md)
-  - [LinuxIO模型.md](Linux/LinuxIO模型.md)
+- **[LNMP](Linux/README.md)**
+  - [Linux基本操作命令](Linux/Linux命令.md)
+  - [Linux网络相关命令](Linux/Linux命令2.md)
+  - [Crontab计划任务](Linux/crontab.md)
+  - [Inode介绍](Linux/inode.md)
+  - [Shell入门教程](Linux/shell.md)
+  - [Sed命令](Linux/Sed.md)
+  - [Awk命令](Linux/AWK.md)
+  - [Linux IO模型](Linux/LinuxIO模型.md)
+  - [Vim编辑器](Linux/Vim.md)
+  - [Nginx](Linux/Nginx.md)
+  - [LAMP/LNMP环境搭建](Linux/lanmp.md)
 
-- [数据库](Mysql/README.md)
+- **[操作系统](操作系统/README.md)**
+  - [操作系统概论](操作系统/README.md)
+  - [进程和线程的区别](操作系统/进程和线程.md)
 
-  - [MySQL](Mysql/README.md)
+- **数据库**
+  - **[MySQL](Mysql/README.md)**
+    - [SQL标准](Mysql/SQL标准.md)
+    - [数据库三范式](Mysql/MySQL三范式.md)
+    - [存储引擎](Mysql/存储引擎.md)
+    - [事务](Mysql/事务.md)
+    - [锁](Mysql/锁.md)
+    - [索引](Mysql/索引.md)
+    - [explain分析SQL](Mysql/explain.md)
+    - [MySQL优化](Mysql/MySQL优化.md)
+    - [MySQL索引原理及慢查询优化](Mysql/MySQL索引原理及慢查询优化.md)
+  - [MongoDB](MongoDb/MongoDB.md)
 
-  - [Mongodb](MongoDb/MongoDB.md)
-
-- [计算机网络](计算机网络/README.md)
-
+- **[计算机网络](计算机网络/README.md)**
   - [IP协议](计算机网络/IP协议.md)
-
   - [TCP协议](计算机网络/TCP协议.md)
   - [UDP协议](计算机网络/UDP协议.md)
-  - [HTTP协议](计算机网络/HTTP协议)
-  - [HTTPS/HTTP2/HTTP](计算机网络/HTTP2.md)
+  - [HTTP协议](计算机网络/HTTP协议.md)
+  - [HTTPS协议](计算机网络/HTTPS.md)
+  - [HTTP2协议](计算机网络/HTTP2.md)
+  - [Websocket协议](计算机网络/Webscokt.md)
 
-- [版本控制器](版本控制器/Git.md)
-
+- **[版本控制器](版本控制器/README.md)**
   - [Git](版本控制器/Git.md)
-  - [SVN]()
+  - [Git 如何移除中间某些提交](版本控制器/Git_removeCommits.md)
 
-- [数据结构](数据结构/README.md)
-
+- **[数据结构](数据结构/README.md)**
   - [数组](数据结构/数组.md)
   - [链表](数据结构/链表.md)
-  - [队列](数据结构/队列.md)
-  - [栈](数据结构/栈.md)
-  - [堆](数据结构/堆.md)
-  - [集合](数据结构/集合.md)
-  - [树](数据结构/树.md)
-    - [二叉树 ]()
-    - [二叉查找树]()
-    - [红黑树]()
-    - [B-Tree、B+Tree]()
-  - [图]()
+  - [堆栈](数据结构/堆栈.md)
+  - [散列表](数据结构/散列表.md)
+  - [字符串](数据结构/字符串.md)
+  - [二叉树基本操作](数据结构/二叉树基本操作.md)
+  - [Leetcode经典二叉树题目集合](数据结构/Leetcode经典二叉树题目集合.md)
 
-- [算法](算法/README.md)
-
-  - [排序算法]()
-    - [冒泡排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/BubbleSort.php)
-    - [选择排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/SelectSort.php)
-    - [插入排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/InsertSort.php)
-    - [快速排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/QuickSort.php)
-    - [堆排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/HeapSort.php)
-    - [归并排序](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Sort/MergeSort.php)
-  - [查找算法]()
-    - [二分查找](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Query/BinaryQuery.php)
-    - [hash]()
-    - [KPM](https://github.com/PuShaoWei/arithmetic-php/blob/master/package/Query/Kmp.php)
-  - [其他]()
-    - 布隆过滤器
-    - 贪心算法
-    - 回溯算法
-    - 动态规划
-    - 最小生成树
-    - 最短路径
-    - 推荐算法
-    - 深度优先、广度优先
+- **[算法](算法/README.md)**
+  - [二分查找](算法/二分查找.md)
+  - [动态规划](算法/动态规划.md)
+  - [排序算法（冒泡/选择/插入/希尔/快排）](算法/README.md)
   - [编程之法：面试和算法心得](https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/03.02.html)
 
-- [消息队列](MQ/README.md)
-
+- **[消息队列](MQ/README.md)**
   - [RabbitMQ](MQ/rabbitmq.md)
-  - [ActiveMq]()
-  - [Nsq]()
-  - [kafka]()
+  - [消息队列常见面试题](MQ/question.md)
 
-- [缓存系统]()
-
+- **缓存系统**
   - [Redis](Cache/Redis.md)
-  - [Memcache]()
 
-- [PHP](PHP/README.md)
+- **[PHP](PHP/README.md)**
+  - [PHP7新特性](PHP/php7.md)
+  - [PHP运行原理](PHP/PHP运行原理.md)
+  - [Zval结构](PHP/PHP-Zval结构.md)
+  - [HashTable](PHP/PHP7-HashTable.md)
+  - [PHP-FPM配置选项](PHP/PHP-FPM配置选项.md)
+  - [正则表达式](PHP/正则表达式.md)
+  - [PHP手册笔记](PHP/PHP手册笔记/README.md)（基本语法、变量常量、运算符、流程控制、函数、面向对象、命名空间、错误异常处理）
+  - [PHP8新特性](PHP/PHP8.md)
+  - [PHP8.1新特性](PHP/PHP8.1.md)
+  - [PHP8.2新特性](PHP/PHP8.2.md)
 
-  - [PHP7](PHP/php7.md)
-  - [面向对象OOP]()
-  - [Zval](https://github.com/xianyunyh/PHP-Interview/blob/master/PHP/PHP-Zval%E7%BB%93%E6%9E%84.md)
-  - [HashTable](https://github.com/xianyunyh/PHP-Interview/blob/master/PHP/PHP7-HashTable.md)
-  - [Swoole]()
+- **[设计模式](设计模式/README.md)**
+  - [创建型模式](设计模式/Creational.md)
+  - [结构型模式](设计模式/Structural.md)
+  - [行为型模式](设计模式/Behavioral.md)
 
-- [设计模式](设计模式/README.md)
+- **[架构和系统设计](架构和系统设计/README.md)**
+  - [API设计（REST）](架构和系统设计/API设计.md)
 
-- [面试](面试/README.md)
+- **[面试](面试/README.md)**
+  - [离职原因回答](面试/01离职原因回答.md)
+  - [写简历](面试/02写简历.md)
+  - [裸辞应对](面试/03裸辞应对.md)
+  - [面试提问](面试/04面试提问.md)
+  - [谈薪资](面试/05谈薪资.md)
+  - [笔试题1](面试/笔试题.md) / [笔试题2](面试/笔试题2.md) / [笔试题3](面试/笔试题3.md) / [笔试题4](面试/笔试题4.md)
+  - [面试题5](面试/面试题5.md) / [面试题6](面试/面试题6.md)
+  - [面试总结](面试/面试总结.md)
 
+## 本地预览文档站点
 
-## 生成自己的Gitbook
+本项目使用 [VitePress](https://vitepress.dev/) 搭建文档站点，`master` 分支推送后会通过 GitHub Actions（见 [.github/workflows/deploy.yml](.github/workflows/deploy.yml)）自动构建并发布到 GitHub Pages。
+
+> 注意：仓库原来使用 Jekyll 从分支构建 GitHub Pages。切换到 VitePress 后，请在仓库 `Settings → Pages` 中，将 **Build and deployment → Source** 改为 **GitHub Actions**，新的工作流才会生效。
 
 ```bash
-$ npm install gitbook-cli -g
 $ git clone https://github.com/xianyunyh/PHP-Interview
 $ cd PHP-Interview
-$ gitbook serve # 本地预览
-$ gitbook build # 生成静态的html
+$ npm install
+$ npm run docs:dev    # 本地预览，默认 http://localhost:5173
+$ npm run docs:build  # 生成静态文件到 .vitepress/dist
 ```
 
 ## 推荐阅读资料

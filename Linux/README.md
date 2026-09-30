@@ -1,4 +1,18 @@
-## 操作系统概述
+## Linux / LNMP
+
+本章整理 Linux 常用命令、Shell 编程与 LNMP（Linux+Nginx+MySQL+PHP）环境相关知识。
+
+- [Linux基本操作命令](Linux命令.md) —— 文件和目录管理常用命令
+- [Linux网络相关命令](Linux命令2.md) —— 磁盘、网络相关命令
+- [Crontab计划任务](crontab.md)
+- [Inode介绍](inode.md)
+- [Shell入门教程](shell.md)
+- [Sed命令](Sed.md)
+- [Awk命令](AWK.md)
+- [Linux IO模型](LinuxIO模型.md)
+- [Vim编辑器](Vim.md)
+- [Nginx](Nginx.md)
+- [LAMP/LNMP环境搭建](lanmp.md)
 
 操作系统，英文名称Operating System，简称OS，是计算机系统中必不可少的基础系统软件，它是应用程序运行以及用户操作必备的基础环境支撑，是计算机系统的核心。
 

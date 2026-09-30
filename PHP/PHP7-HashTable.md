@@ -1,3 +1,5 @@
+## PHP7 HashTable
+
 ![img](https://images0.cnblogs.com/blog2015/444975/201503/091012060652318.png) 
 
 上图是PHP5 hashtable的实现

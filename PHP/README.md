@@ -1,27 +1,27 @@
 ## PHP
 
-- [手册笔记](https://github.com/xianyunyh/studynotes/tree/master/PHP/PHP%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0)
-- [官方文档](http://php.net/manual/zh/langref.php)
-- [数组函数]()
-- [字符串函数]()
-- [垃圾回收机制]()
-- [面向对象]()
+PHP 相关的核心知识点整理，涵盖底层实现（Zval、HashTable）、运行原理、进程模型（FPM）、正则表达式以及各版本新特性。
 
-  - 封装
-  - 继承
-  - 多态
-- [zval结构]()
-- [魔术方法]()
-- [抽象类和接口]()
-- [MVC]()
-- [访问修饰符]()
-- [正则表达式]()
-- [FPM、FastCGI]()
-- [PSR规范](https://github.com/PizzaLiu/PHP-FIG)
-  - **PSR 1 基本代码规范**
-  - **PSR 2 代码风格指南**
-  - **PSR 3 日志接口**
-  - **PSR 4 改进的自动加载**
+### 内核与运行原理
+
+- [PHP7 新特性](php7.md) —— PHP7 相对 PHP5 的重大变化
+- [PHP运行原理](PHP运行原理.md) —— 从源码到执行的整体流程、生命周期
+- [Zval 结构](PHP-Zval结构.md) —— 变量的内部实现、引用计数与写时复制
+- [HashTable](PHP7-HashTable.md) —— PHP7 全新的 HashTable 实现
+- [PHP-FPM 配置选项](PHP-FPM配置选项.md) —— FPM 进程管理、常用配置说明
+
+### 语法与工具
+
+- [正则表达式](正则表达式.md) —— PCRE 常用语法与函数
+- [PHP手册笔记](PHP手册笔记/README.md) —— 按 PHP 官方手册整理的基础语法笔记（变量、运算符、流程控制、面向对象、命名空间、异常处理等）
+
+### 新版本特性
+
+- [PHP8 新特性](PHP8.md)
+- [PHP8.1 新特性](PHP8.1.md)
+- [PHP8.2 新特性](PHP8.2.md)
+
+### 面向对象与安全（摘录）
 
 ### Zval 引用计数
 
@@ -29,7 +29,7 @@
 
 PHP5
 
-```c_cpp
+```c
 struct _zval_struct {
     union {
         long lval;
@@ -50,7 +50,7 @@ struct _zval_struct {
 
 复合类型的变量把他们的成员属性都存在自己的符号表里。
 
-```pph
+```php
 <?php
 $a = array( 'meaning' => 'life', 'number' => 42 );
 xdebug_debug_zval( 'a' );
@@ -138,3 +138,7 @@ Fpm是一个实现了Fastcgi协议的程序,用来管理Fastcgi起的进程的,�
 3. 当客户端请求到达Web Server时，FastCGI进程管理器选择并连接到一个CGI解释器。Web server将CGI环境变量和标准输入发送到FastCGI子进程php-cgi。
 4. FastCGI子进程完成处理后将标准输出和错误信息从同一连接返回Web Server。当FastCGI子进程关闭连接时，请求便告处理完成。FastCGI子进程接着等待并处理来自FastCGI进程管理器(运行在Web Server中)的下一个连接。 在CGI模式中，php-cgi在此便退出了。
 
+### 阅读资料
+
+- [PHP官方文档](http://php.net/manual/zh/langref.php)
+- [PSR规范](https://github.com/PizzaLiu/PHP-FIG) —— PSR-1 基本代码规范、PSR-2 代码风格指南、PSR-3 日志接口、PSR-4 自动加载等

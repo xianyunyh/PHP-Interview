@@ -66,7 +66,7 @@ SPDY位于HTTP之下，TCP和SSL之上，这样可以轻松兼容老版本的HTT
 
 ![img](images/http2.png)
 
-```conf
+```nginx
 server {
 	listen 443 ssl http2;
 	server_name example.com;

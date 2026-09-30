@@ -93,7 +93,7 @@ HEAD指针指向了dev
 
 - 合并分支
 
-合并某分支到当前分支：git merge <name>
+合并某分支到当前分支：`git merge <name>`
 ```
 git checkout master 
 git merge dev

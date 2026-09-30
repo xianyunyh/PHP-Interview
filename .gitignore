@@ -5,3 +5,5 @@
 /.vagrant
 .env
 /_book
+.vitepress/cache
+.vitepress/dist
